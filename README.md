@@ -234,8 +234,7 @@ function uniteUnique(arr) {
     const final = []
     for(let i = 0;i < old.length;i++){
         for(let j = 0;j < old[i].length;j++){
-          if(!final.includes(old[i][j]))
-          final.push(old[i][j])
+          if(!final.includes(old[i][j])) final.push(old[i][j])
         }
     }
   return final
