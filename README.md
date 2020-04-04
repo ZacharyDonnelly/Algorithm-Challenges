@@ -129,7 +129,7 @@ findUniq([ 3,3,3,10,3,3,3 ]);
 ```
 <hr />
 
-Write a simple parser that will parse and run Deadfish.
+## Make the Deadfish swim - Codewars 6 Kyu ~ [Link to Kata](https://www.codewars.com/kata/51e0007c1f9378fa810002a9/train/javascript)
 
 Deadfish has 4 commands, each 1 character long:
 
@@ -164,6 +164,7 @@ function parse(data) {
 ### Expected:
 ```
 parse("iiisdoso") // should return [ 8, 64 ]
+parse("iiisxxxdoso") // should return [ 8, 64 ]
 ```
 <hr />
 
@@ -208,6 +209,36 @@ function uniteUnique(arr) {
 ### Expected:
 ```
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) // should return [1, 3, 2, 5, 4]
+```
+
+<hr />
+
+## Find the Parity Outlier - Codewars 6 Kyu ~ [Link to Kata](https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/javascript)
+
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+```
+function findOutlier(arr){
+  let even = [];
+  let odd = [];
+  for(let i = 0;i < arr.length;i++){
+    if(arr[i] % 2 === 0){
+      even.push(arr[i])
+    }else {
+      odd.push(arr[i])
+    }
+  }
+  if(even.length > odd.length){
+    return Number(odd)
+  }else {
+    return Number(even)
+  }
+}
+```
+### Expected:
+```
+findOutlier([0, 1, 2]) // should return 1
+findOutlier([1, 2, 3]) // should return 2
+findOutlier([2,6,8,10,3]) // should return 3
 ```
 
 <hr />
