@@ -21,13 +21,6 @@ Your task is to sort ascending odd numbers but even numbers must be on their pla
 Zero isn't an odd number and you don't need to move it. If you have an empty array, you need to return it.
 ```
 function sortArray(array) {
-  const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
-  return array.map((x) => x % 2 ? odd.shift() : x);
-}
-```
-*Version before I refactored*
-```
-function sortArray(array) {
   var odds = [];
   //loop, if it's odd, push to odds array
   for (var i = 0; i < array.length; ++i) {
@@ -101,32 +94,7 @@ makeXOGrid(3,2) // should return [["X","O"],["X","O"],["X","O"]]
 
 makeXOGrid(3,3) // should return [["X","O","X"],["O","X","O"],["X","O","X"]]
 ```
-<hr />
 
-You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
-```
-function findOutlier(int){
-  var even = int.filter(a=>a%2==0);
-  var odd = int.filter(a=>a%2!==0);
-  return even.length==1? even[0] : odd[0];
-}
-```
-### Expected:
-```
-findOutlier([0, 1, 2]),1) // returns odd
-findOutlier([1, 2, 3]), 2) // returns even
-```
-
-<hr />
-
-Return the number that only appears once in the array
-```
-function findUniq(arr) {
-  arr.sort((a,b)=>a-b);
-  return arr[0]==arr[1]?arr.pop():arr[0];
-}
-findUniq([ 3,3,3,10,3,3,3 ]);
-```
 <hr />
 
 ## Make the Deadfish swim - Codewars 6 Kyu ~ [Link to Kata](https://www.codewars.com/kata/51e0007c1f9378fa810002a9/train/javascript)
