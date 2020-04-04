@@ -65,9 +65,9 @@ function rotate(arr,num){
 ```
 ### Expected:
 ```
-rotate([1,2,3], 1) // [3,1,2]
-rotate([1,2,3], 2) // [2,3,1]
-rotate([1,2,3], 3) // [1,2,3]
+rotate([1,2,3], 1) // should return [3,1,2]
+rotate([1,2,3], 2) // should return [2,3,1]
+rotate([1,2,3], 3) // should return [1,2,3]
 ```
 
 <hr />
@@ -95,22 +95,11 @@ function makeXOGrid(rows,amount){
 ```
 ### Expected:
 ```
-makeXOGrid(1,4) 
+makeXOGrid(1,4) // should return [["X","O","X","O"]]
 
-/*/
-[["X","O","X","O"]]
-/*/
+makeXOGrid(3,2) // should return [["X","O"],["X","O"],["X","O"]]
 
-makeXOGrid(3,2) 
-
-/*/
-[["X","O"],["X","O"],["X","O"]]
-/*/
-
-makeXOGrid(3,3) 
-/*/
-[["X","O","X"],["O","X","O"],["X","O","X"]]
-/*/
+makeXOGrid(3,3) // should return [["X","O","X"],["O","X","O"],["X","O","X"]]
 ```
 <hr />
 
@@ -124,8 +113,8 @@ function findOutlier(int){
 ```
 ### Expected:
 ```
-(findOutlier([0, 1, 2]),1) // returns odd
-(findOutlier([1, 2, 3]), 2) // returns even
+findOutlier([0, 1, 2]),1) // returns odd
+findOutlier([1, 2, 3]), 2) // returns even
 ```
 
 <hr />
@@ -174,7 +163,7 @@ function parse(data) {
 ```
 ### Expected:
 ```
-parse("iiisdoso") [ 8, 64 ]
+parse("iiisdoso") // should return [ 8, 64 ]
 ```
 <hr />
 
@@ -194,7 +183,7 @@ function charCount(str){
 ```
 ### Expected:
 ```
-countAllCharacters('banana') {b: 1, a: 3, n: 2}
+countAllCharacters('banana') // should return {b: 1, a: 3, n: 2}
 ```
 
 <hr />
@@ -218,7 +207,7 @@ function uniteUnique(arr) {
 ```
 ### Expected:
 ```
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) [1, 3, 2, 5, 4]
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) // should return [1, 3, 2, 5, 4]
 ```
 
 <hr />
@@ -241,9 +230,9 @@ function songDecoder(song){
 ```
 ### Expected:
 ```
-(songDecoder("AWUBBWUBC"), "A B C","WUB should be replaced by 1 space");
-(songDecoder("AWUBWUBWUBBWUBWUBWUBC"), "A B C","multiples WUB should be replaced by only 1 space");
-(songDecoder("WUBAWUBBWUBCWUB"), "A B C","heading or trailing spaces should be removed");
+songDecoder("AWUBBWUBC") // should return "A B C"
+songDecoder("AWUBWUBWUBBWUBWUBWUBC") // should return "A B C"
+songDecoder("WUBAWUBBWUBCWUB") // should return "A B C"
 ```
 
 <hr />
@@ -281,5 +270,33 @@ solution('abcdef') // should return ['ab', 'cd', 'ef']
 solution("abcdefg")  // should return ["ab", "cd", "ef", "g_"]
 solution("") // should return []
 ```
+
+<hr />
+
+## Valid Parentheses - Codewars 5 Kyu ~ [Link to Kata](https://www.codewars.com/kata/52774a314c2333f0a7000688/train/javascript)
+
+Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+
+```
+function validParentheses(parens){
+  var indent = 0;
+  
+  
+  for (var i = 0 ; i < parens.length && indent >= 0; i++) {
+    indent += (parens[i] == '(') ? 1 : -1;    
+    console.log(indent, parens[i]);
+  }
+  
+  return (indent == 0);
+}
+```
+### Expected:
+```
+validParentheses( "()" ) // should return true
+validParentheses( "())" ) // should return false
+```
+
+<hr />
+
 
 <hr />
