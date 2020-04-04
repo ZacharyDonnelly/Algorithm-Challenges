@@ -239,7 +239,7 @@ function songDecoder(song){
   return count.join(" ")
 }
 ```
-Expected:
+### Expected:
 ```
 (songDecoder("AWUBBWUBC"), "A B C","WUB should be replaced by 1 space");
 (songDecoder("AWUBWUBWUBBWUBWUBWUBC"), "A B C","multiples WUB should be replaced by only 1 space");
