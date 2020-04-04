@@ -223,6 +223,31 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) [1, 3, 2, 5, 4]
 
 <hr />
 
+## Dubstep - Codewars 6 Kyu ~ [Link to Kata](https://www.codewars.com/kata/551dc350bf4e526099000ae5/train/javascript)
+
+Let's assume that a song consists of some number of words (that don't contain WUB). To make the dubstep remix of this song, Polycarpus inserts a certain number of words "WUB" before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including "WUB", in one string and plays the song at the club.
+
+For example, a song with words "I AM X" can transform into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and cannot transform into "WUBWUBIAMWUBX".
+```
+function songDecoder(song){
+  let count = song.split("WUB")
+  for(let i = count.length; i >= 0;i--){
+    if(count[i] === ''){
+      count.splice(i, 1)
+  }
+  }
+  return count.join(" ")
+}
+```
+Expected:
+```
+(songDecoder("AWUBBWUBC"), "A B C","WUB should be replaced by 1 space");
+(songDecoder("AWUBWUBWUBBWUBWUBWUBC"), "A B C","multiples WUB should be replaced by only 1 space");
+(songDecoder("WUBAWUBBWUBCWUB"), "A B C","heading or trailing spaces should be removed");
+```
+
+<hr />
+
 ## Split Strings - Codewars 6 Kyu ~ [Link to Kata](https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/javascript)
 
 Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
